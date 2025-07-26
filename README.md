@@ -2,10 +2,8 @@
 
 ## Description
 
-BROOOOOOOOO
-
 - Use Quiver Quantitative API to get info on trades from Congressmen and other high profile people
-- Use a stock market simulator to buy/sell according to a collection of people
+- Use Alpaca API to make corresponding trades
 
 ## Architecture
 
