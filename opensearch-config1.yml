@@ -1,0 +1,20 @@
+config:
+  dynamic:
+    http:
+      anonymous_auth_enabled: false
+    authc:
+      basic_auth_internal:
+        http_enabled: true
+        transport_enabled: false # enables/disables authentication on transport layer
+        order: <integer> # determines the order in which backend is queried if multiple backends are configured
+        http_authenticator:
+          type: <type> # basic, jwt, openid, saml, clientcert
+          challenge: <true|false>
+          config:
+            ...
+        authentication_backend:
+          type: internal # noop, internal, ldap
+          config:
+            ...
+    authz:
+      ...

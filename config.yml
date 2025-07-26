@@ -1,0 +1,5 @@
+people:
+  - name: Nancy Pelosi
+    weight: 0.5
+  - name: Mitch McConnell
+    weight: 0.5
