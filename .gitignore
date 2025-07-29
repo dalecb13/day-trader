@@ -5,5 +5,35 @@ root-ca.pem
 # Python
 __pycache__
 
-# NodeJS
-node_modules
+# NextJS
+**/node_modules
+**/.pnp
+**/.pnp.*
+**/.yarn/*
+**/!.yarn/patches
+**/!.yarn/plugins
+**/!.yarn/releases
+**/!.yarn/versions
+
+web-app/coverage
+web-app/.next
+web-app/out
+
+web-app/build
+
+web-app/.DS_Store
+web-app/*.pem
+
+web-app/npm-debug.log*
+web-app/yarn-debug.log*
+web-app/yarn-error.log*
+web-app/.pnpm-debug.log*
+
+web-app/.env*
+
+# vercel
+web-app/.vercel
+
+# typescript
+web-app/*.tsbuildinfo
+web-app/next-env.d.ts
