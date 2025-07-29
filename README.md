@@ -23,3 +23,7 @@ Pre-cron
 4. Write code to make decision
 5. Write code that writes to Opensearch
 6. Write code that is able to filter based on config--config file needs a version or date or at least needs to be written
+
+## Requests
+
+Get Alpaca accounts
