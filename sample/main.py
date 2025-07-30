@@ -34,15 +34,11 @@ def read_accounts():
     account = trading_client.get_account()
     return account
 
-@app.get("/trades")
+@app.get("/congress-trades")
 def read_trades():
-    headers = {
-        'Authorization': 'Bearer ' + str(QUIVER_TOKEN),
-        'Accept': 'application/json'
-    }
-    params = {
-        'date': '20250728'
-    }
-    trades = requests.get('https://api.quiverquant.com/beta/bulk/congresstrading/', headers=headers, params=params)
-    print(trades)
+    try:
+        dfCongress = quiver.congress_trading()
+        return dfCongress.to_json(orient='records')
+    except Exception as e:
+        print(e)
     # return trades
