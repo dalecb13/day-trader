@@ -33,3 +33,22 @@ export type Account = {
   options_approved_level: number;
   options_trading_level: number;
 };
+
+export type CongressTrade = {
+  Representative: string,
+  BioGuideID: string,
+  ReportDate: number,
+  TransactionDate: number,
+  Ticker: string,
+  Transaction: string,
+  Range: string,
+  House: string,
+  Amount: string,
+  Party: string,
+  last_modified: string, // YYYY-MM-DD
+  TickerType: string,
+  Description: string,
+  ExcessReturn: number,
+  PriceChange: number,
+  SPYChange: number
+}

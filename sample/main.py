@@ -1,8 +1,7 @@
 import os
 from dotenv import load_dotenv
-import requests
 from alpaca.trading.client import TradingClient
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 import quiverquant
 
@@ -35,10 +34,12 @@ def read_accounts():
     return account
 
 @app.get("/congress-trades")
-def read_trades():
+def congress_trades():
     try:
         dfCongress = quiver.congress_trading()
-        return dfCongress.to_json(orient='records')
+        dfCongress.sort_values(by=['TransactionDate'], inplace=True, ignore_index=True)
+        json_data = dfCongress.to_json(orient='records')
+        return Response(content=json_data, media_type="application/json")
     except Exception as e:
-        print(e)
+        print('Error:', e)
     # return trades
